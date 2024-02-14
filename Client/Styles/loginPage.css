@@ -1,0 +1,82 @@
+.loginpage {
+    position: absolute;
+    background-color: #222e50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+}
+.loginForm {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #222e50;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    border: #fff 1px solid;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.login-input input::placeholder {
+    color: #ffffff9d;
+}
+.login-input input {
+    width: 100%;
+    height: 100%;
+    padding-inline: 3px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fccb06dd;
+    font-size: 18px;
+}
+.login-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.login-input button {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #fccb06dd;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.radio-input{
+    /* background-color: red; */
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+
+}
+.radio-input input{
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+}
+.login-icon{
+    color: #fccb06dd;
+}

@@ -1,0 +1,74 @@
+.createHall {
+    position: absolute;
+    background-color: #222e50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+}
+.hall-form {
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #222e50;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    border: #fff 1px solid;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hall-input input::placeholder {
+    color: #ffffff9d;
+}
+.hall-input input {
+    width: 100%;
+    height: 100%;
+    padding-inline: 3px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fccb06dd;
+    font-size: 18px;
+}
+.hall-input:nth-child(7) input {
+    border: none;
+    display: flex;
+}
+.hall-input:nth-child(7) {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 60px;
+    color: #fff;
+}
+.hall-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.hall-input button {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #fccb06dd;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
