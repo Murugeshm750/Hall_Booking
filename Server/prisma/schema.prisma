@@ -1,56 +1,49 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+// Define the models
+model Profiles {
+  id      Int    @id @default(autoincrement())
+  name    String
+  contact String
+  address String
+  email   String
+  user    User?
+  userId  Int?
+  owner   Owner?
+  ownerId Int?
+}
+
 model User {
-  u_id Int @unique @default(autoincrement())
-  u_name String
-  u_contact String
-  u_address String
-  u_email String
-  password String
-  isuser String 
+  id        Int       @id @default(autoincrement())
+  profile   Profiles  @relation(fields: [profileId], references: [id])
+  profileId Int       @unique
+  bookings  Booking[]
 }
 
 model Owner {
-  o_id Int @unique @default(autoincrement())
-  o_name String
-  o_contact String
-  o_address String
-  o_email String
-  password String
-  isowner String 
-}
-model passkey {
-  isowner String @unique @default("owner")
-  isuser String @unique @default("user")
-}
-model Hall {
-  h_id Int @unique @default(autoincrement())
-  h_name String
-  h_location String
-  h_price BigInt
-  h_img Bytes
-  h_size_from Int
-  h_size_to Int
+  id        Int      @id @default(autoincrement())
+  profile   Profiles @relation(fields: [profileId], references: [id])
+  profileId Int      @unique
+  rooms     Room[]
 }
 
-// model userKey {
-//   u_id Int @unique
-//   u_username String @unique
-//   user User @relation(fields: [u_id], references: [u_id])
-// }
+model Room {
+  id       Int       @id @default(autoincrement())
+  ownerId  Int
+  owner    Owner     @relation(fields: [ownerId], references: [id])
+  bookings Booking[]
+}
 
-// model ownerKey {
-//   o_id Int @unique
-//   o_username String @unique
-//   owner Owner @relation(fields: [o_id], references: [o_id])
-// }
+model Booking {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  room      Room     @relation(fields: [roomId], references: [id])
+  roomId    Int
+  startDate DateTime
+  endDate   DateTime
+}
