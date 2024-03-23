@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../Components/Header';
+import Header from '../src/Components/Header';
 import Footer from './Footer';
 
-const SignIn = () => {
+const Bookings = () => {
   return (
     <div>
       <Header />
@@ -11,4 +11,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default Bookings

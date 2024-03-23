@@ -85,7 +85,22 @@ const Loginpage = () => {
       } catch (error) {
         console.log(error);
       }
+      
     }
+    
+      try {
+        const response = await axios.post('/login', userLoginDetails);
+        const { token, refreshToken } = response.data;
+  
+        // Store the tokens in localStorage or secure cookie for later use
+        localStorage.setItem('token', token);
+        localStorage.setItem('refreshToken', refreshToken);
+  
+        // Redirect or perform other actions upon successful login
+      } catch (error) {
+        // Handle login error
+      }
+
 
     const owner = validateOwner.find((o) => o.o_email === createUserLogin.username && o.password === createUserLogin.password && o.isowner === createUserLogin.passkey);
 
